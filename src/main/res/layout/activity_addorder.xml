@@ -1,0 +1,261 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF4F0F0"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFEA1515"
+
+        >
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/btn_back"
+            android:onClick="onClick" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="添加订单"
+            android:textColor="@color/colorWhite1"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="手机信息"
+        android:textColor="#FF232121" />
+
+    <LinearLayout
+        android:id="@+id/rl_middle"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlTitle"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background_bolder"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorWhite1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_brand"
+                android:drawablePadding="2dp"
+                android:text="手机品牌:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/sp_brand"
+                android:layout_width="120dp"
+                android:layout_height="30dp"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_model"
+                android:drawablePadding="2dp"
+                android:text="手机型号:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/sp_model"
+                android:layout_width="120dp"
+                android:layout_height="30dp"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_way"
+                android:drawablePadding="2dp"
+                android:text="维修方案:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <Spinner
+                android:id="@+id/sp_way"
+                android:layout_width="120dp"
+                android:layout_height="30dp"></Spinner>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/icon_price"
+                android:drawablePadding="2dp"
+                android:gravity="right"
+                android:text="维修价格:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_price"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="2dp"
+                android:gravity="center_vertical"
+                android:text="0"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="联系人信息"
+        android:textColor="#FF232121" />
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_middle"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/background_bolder"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="客户姓名:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_dname"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="请输入客户姓名"
+                android:textSize="15sp"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="手机号码:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="请输入手机号码"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="15sp"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="客户地址:"
+                android:textColor="#FF180A0A"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:hint="请输入客户地址"
+                android:textSize="15sp"></EditText>
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_commit_order"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_commit_order"
+        android:onClick="onClick"
+        android:text="添加订单"
+        android:textColor="@color/colorWhite1" />
+</LinearLayout>

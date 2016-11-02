@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="2dp">
+
+        <ImageView
+            android:id="@+id/iv_isShown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:src="@drawable/no_order_background" />
+
+    </RelativeLayout>
+    <com.haoweixiu.view.XListView
+        android:id="@+id/lv_finishorder"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="45dp"
+        android:dividerHeight="1dp">
+
+    </com.haoweixiu.view.XListView>
+    <!--<ListView-->
+        <!--android:id="@+id/lv_finishorder"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginBottom="45dp"-->
+        <!--android:dividerHeight="1dp"></ListView>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF50A0A"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂时每页显示前10条未接定单" />
+        <!--<Button-->
+        <!--android:id="@+id/btn_unrecived_before"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:background="@color/colorWhite1"-->
+        <!--android:text="上一页" />-->
+
+        <!--<Button-->
+        <!--android:id="@+id/btn_unrecived_next"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:background="@color/colorWhite1"-->
+        <!--android:text="下一页" />-->
+    </LinearLayout>
+</RelativeLayout>

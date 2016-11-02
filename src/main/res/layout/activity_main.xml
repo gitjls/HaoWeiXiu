@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+  <!--导航栏布局-->
+  <RelativeLayout
+      android:id="@+id/rlTitle"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:visibility="gone"
+      android:background="#FFEA1515"
+
+      >
+
+    <!--<Button-->
+        <!--android:id="@+id/btnBack"-->
+        <!--android:layout_width="20dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_marginLeft="10dp"-->
+        <!--android:onClick="onClick"-->
+        <!--android:background="@drawable/btn_back" />-->
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite1"
+        android:text="首页"
+        android:layout_height="wrap_content" />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:background="#FFF6F9B7"
+      android:layout_height="0dp"
+      android:layout_weight="10">
+
+   <!-- <fragment
+        android:id="@+id/id_fragment_title"
+        android:name="com.haoguanjia.view."
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        tools:layout="@layout/fragment_weijie" />-->
+
+    <FrameLayout
+        android:id="@+id/id_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+       />
+
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@+id/rlContent"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1.5"
+      android:background="#ffffff">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+      <RadioButton
+          android:id="@+id/btn_homePage"
+          android:layout_width="0dp"
+          android:onClick="onClick"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@null"
+          android:button="@null"
+          android:drawablePadding="3dp"
+          android:drawableTop="@drawable/btn_myorder"
+          android:gravity="center_horizontal"
+          android:padding="3dp"
+          android:text="首页"
+          android:textColor="@color/btn_navigtion" />
+
+      <RadioButton
+          android:id="@+id/btn_myorder"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@null"
+          android:onClick="onClick"
+          android:button="@null"
+          android:drawablePadding="3dp"
+          android:drawableTop="@drawable/btn_homepage"
+          android:gravity="center_horizontal"
+          android:padding="3dp"
+          android:text="我的订单"
+          android:textColor="@color/btn_navigtion" />
+
+      <RadioButton
+          android:id="@+id/btn_ordermap"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@null"
+          android:onClick="onClick"
+          android:button="@null"
+          android:drawablePadding="3dp"
+          android:drawableTop="@drawable/btn_order_map"
+          android:gravity="center_horizontal"
+          android:padding="3dp"
+          android:text="订单地图"
+          android:textColor="@color/btn_navigtion" />
+
+      <RadioButton
+          android:id="@+id/btn_myinfo"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="@null"
+          android:button="@null"
+          android:drawablePadding="3dp"
+          android:drawableTop="@drawable/btn_gerenzhongxing"
+          android:gravity="center_horizontal"
+          android:padding="3dp"
+          android:onClick="onClick"
+          android:text="个人中心"
+          android:textColor="@color/btn_navigtion" />
+    </RadioGroup>
+
+  </RelativeLayout>
+</LinearLayout>

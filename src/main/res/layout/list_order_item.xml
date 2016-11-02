@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="@color/colorWhite1"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_order_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单号"
+        style="@style/OrderLit" />
+
+    <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="接单时间："
+        style="@style/OrderLit"/>
+
+    <TextView
+        android:id="@+id/tv_custom_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="手机型号："
+        style="@style/OrderLit" />
+
+    <TextView
+        android:id="@+id/tv_custom_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="订单价格："
+        style="@style/OrderLit" />
+</LinearLayout>

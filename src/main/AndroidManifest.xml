@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.haoweixiu">
+    <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Push service 运行需要的权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <!--android:name="com.haoguanjia.view.FloatApplication"-->
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <!-- 服务 -->
+        <service
+            android:name=".service.MainService"
+            android:exported="false"
+            android:label="MainService">
+            <intent-filter>
+                <action android:name="com.haoguanjia.service.MainService" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MyOrderActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.LoadingActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".activity.AndyViewPagerActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.CompleteDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.UnReciveOrderDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.ReciveOrderDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.BaseActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".gaodemap.activities.RouteActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".activity.AddOrderActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name=".gaodemap.activities.DriveRouteDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gaodemap.activities.WalkRouteDetailActivity"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gaodemap.activities.BusRouteDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".gaodemap.activities.OrderDetailAty"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".gaodemap.activities.ImageMarkerAty"
+            android:label="@string/route_demo"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService"></service>
+        <!-- 广播 -->
+
+        <receiver android:name=".service.MainReceiver">
+
+            <!-- 开机启动服务广播 -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+            <!-- 每隔60秒钟重启服务广播 -->
+            <intent-filter>
+                <action android:name="com.my.parent_for_android.rebootservice" />
+            </intent-filter>
+            <!-- 程序安装完毕监听广播 -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+            <!-- 网络状态改变监听广播 -->
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- 下载完成监听广播 -->
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+            </intent-filter>
+        </receiver>
+        <provider
+            android:name="com.baidu.android.pushservice.PushInfoProvider"
+            android:authorities="com.haoweixiu.bdpush"
+            android:exported="true"
+            android:writePermission="baidu.push.permission.WRITE_PUSHINFOPROVIDER.com.haoweixiu" />
+        <!-- push service start -->
+        <!-- 用于接收系统消息以保证PushService正常运行 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.PushServiceReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.SHOW" />
+                <action android:name="com.baidu.android.pushservice.action.media.CLICK" />
+                <!-- 以下四项为可选的action声明，可大大提高service存活率和消息到达速度 -->
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <!-- Push服务接收客户端发送的各种请求 -->
+        <!-- 注意：RegistrationReceiver 在2.1.1及之前版本有拼写失误，为RegistratonReceiver ，用新版本SDK时请更改为如下代码 -->
+        <receiver
+            android:name="com.baidu.android.pushservice.RegistrationReceiver"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.METHOD" />
+                <action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <!-- push应用定义消息receiver声明 -->
+        <receiver android:name="com.haoweixiu.dto.MyPushMessageReceiver">
+            <intent-filter>
+
+                <!-- 接收push消息 -->
+                <action android:name="com.baidu.android.pushservice.action.MESSAGE" />
+                <!-- 接收bind,unbind,fetch,delete等反馈消息 -->
+                <action android:name="com.baidu.android.pushservice.action.RECEIVE" />
+                <action android:name="com.baidu.android.pushservice.action.notification.CLICK" />
+            </intent-filter>
+        </receiver>
+        <!-- Push 服务 -->
+        <!-- 注意：在4.0 (包含)之后的版本需加上如下所示的intent-filter action -->
+        <service
+            android:name="com.baidu.android.pushservice.PushService"
+            android:exported="true"
+            android:process=":bdservice_v1">
+            <intent-filter>
+                <action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />
+            </intent-filter>
+        </service>
+        <!--高德地图-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="9e1aab9fe7ddd319d8c00dc3d03317f7" />
+        <!-- push service end -->
+        <!-- 在百度开发者中心查询应用的API Key -->
+        <meta-data
+            android:name="api_key"
+            android:value="cteSBshan4i0liMc3RlKrAXK" />
+        <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
+        <service
+            android:name="com.baidu.android.pushservice.CommandService"
+            android:exported="true" />
+
+    </application>
+
+</manifest>
